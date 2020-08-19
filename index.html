@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wheater Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="contaner">
+<div class="child">
+<input type="text" placeholder="Enter your city" id="in1">
+<!-- <button onclick="getdata()">Submit</button> -->
+<div class="child2">
+<div class="d1 m1">how are you</div>
+<div class="d1 m2">how are you</div>
+<div class="d1 m3">how are you</div>
+<div class="d1 m4">how are you</div>
+<div class="d1 m5">how are you</div>
+<div class="d1 m6">how are you</div>
+</div>
+</div>
+</div>
+</body>
+<script>
+let input=document.querySelector("input")
+let main=document.querySelector(".child2")
+let m1=document.querySelector(".m1")
+let m2=document.querySelector(".m2")
+let m3=document.querySelector(".m3")
+let todaydate=new Date();
+let day1=todaydate.getDate()
+let month=todaydate.getMonth()
+monthname=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+let months=monthname[month];
+let days=todaydate.getDay()
+day=["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
+let name=day[days]
+let year=todaydate.getFullYear()
+input.addEventListener("keypress",(e)=>{
+if(e.keyCode==13)
+
+{
+    
+    get()
+}
+
+})
+function get(){
+let x=fetch(`http://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=18a8417f208b073204292b5a59a93539&units=metric`)
+.then(blob=>blob.json())
+.then (data=>showdata(data))
+
+}
+function showdata(q){
+console.log(q);
+let w=q.weather[0].main
+console.log(w);
+m1.innerHTML=`${q.name} ${q.sys.country}`
+m2.innerHTML=`${q.main.temp}&deg;C`
+m3.innerHTML=`${day1} ${months} ${name} ${year}`
+
+
+}
+</script>
+</html>

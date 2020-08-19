@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding:0;
+}
+.contaner{
+    height:98.5vh;
+    width:99.7%;
+    border:2px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('12.jpg');
+    background-size:100% 100%;
+ 
+}
+.child{
+    border: 2px solid silver;
+    height:75%;
+    width:25%;
+    /* border:2px solid red; */
+    border-radius: 5px;
+    background-image:linear-gradient(rgba(181, 171, 171,.5),rgba(181, 171, 171,.5));
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
+}
+input{
+    height:8vh;
+    width:80%;
+    border-radius: 5px;
+}
+.child2{
+    height:60vh;
+    width:20vw;
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.d1{
+    height:8vh;
+    width:90%;
+    border: 1px solid blue;
+}
+#in1{
+    text-align: center;
+    font-size:19px;
+    font-family: calibri;
+    /* background-color:black; */
+}
